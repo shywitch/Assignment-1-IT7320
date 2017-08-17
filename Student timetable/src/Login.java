@@ -19,6 +19,8 @@ public class Login {
 	private JFrame frmLogin;
 	private JTextField textField;
 	private JPasswordField textField_1;
+	private String test1;
+	
 	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -64,10 +66,12 @@ public class Login {
 		frmLogin.getContentPane().add(textField);
 		textField.setColumns(10);
 		
+		
 		textField_1 = new JPasswordField();
 		textField_1.setBounds(111, 84, 86, 20);
 		frmLogin.getContentPane().add(textField_1);
 		textField_1.setColumns(10);
+		
 		
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
@@ -80,7 +84,7 @@ public class Login {
 					String password = "";
 					Connection myConn = DriverManager.getConnection(dbUrl, user,password);
 					Statement myStmt = myConn.createStatement();
-					String test1 = textField.getText();
+					test1 = textField.getText();
 					String test2 = textField_1.getText();
 					ResultSet myRs = myStmt.executeQuery("select * from login Where username = '" + test1 +"' and password = '"+ test2 +"'");
 

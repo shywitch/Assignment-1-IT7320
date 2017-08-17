@@ -14,7 +14,7 @@ public class DBConnection {
 				ResultSet myRs = myStmt.executeQuery("select * from login");
 				
 				while(myRs.next()) {
-					System.out.println(myRs.getString("Username") + " " + myRs.getString("Password"));
+					System.out.println(myRs.getString("Username") + " "+ myRs.getString("Password"));
 				}
 				
 				myStmt.close();
