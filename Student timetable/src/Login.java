@@ -13,12 +13,13 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.awt.Font;
+import javax.swing.UIManager;
 
 public class Login {
 
-	private JFrame frmLogin;
-	private JTextField textField;
-	private JPasswordField textField_1;
+	JFrame frmLogin;
+	private JTextField enteredUsername;
+	private JPasswordField enteredPassword;
 	private String test1;
 	
 	
@@ -57,23 +58,24 @@ public class Login {
 		lblUsername.setBounds(29, 47, 88, 26);
 		frmLogin.getContentPane().add(lblUsername);
 		
-		JLabel lblNewLabel = new JLabel("Password");
-		lblNewLabel.setBounds(29, 84, 88, 26);
-		frmLogin.getContentPane().add(lblNewLabel);
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setBounds(29, 84, 88, 26);
+		frmLogin.getContentPane().add(lblPassword);
 
-		textField = new JTextField();
-		textField.setBounds(111, 50, 86, 20);
-		frmLogin.getContentPane().add(textField);
-		textField.setColumns(10);
+		enteredUsername = new JTextField();
+		enteredUsername.setBounds(111, 50, 86, 20);
+		frmLogin.getContentPane().add(enteredUsername);
+		enteredUsername.setColumns(10);
 		
 		
-		textField_1 = new JPasswordField();
-		textField_1.setBounds(111, 84, 86, 20);
-		frmLogin.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		enteredPassword = new JPasswordField();
+		enteredPassword.setBounds(111, 84, 86, 20);
+		frmLogin.getContentPane().add(enteredPassword);
+		enteredPassword.setColumns(10);
 		
 		
 		JButton btnLogin = new JButton("Login");
+		btnLogin.setBackground(UIManager.getColor("Button.background"));
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -84,8 +86,8 @@ public class Login {
 					String password = "";
 					Connection myConn = DriverManager.getConnection(dbUrl, user,password);
 					Statement myStmt = myConn.createStatement();
-					test1 = textField.getText();
-					String test2 = textField_1.getText();
+					test1 = enteredUsername.getText();
+					String test2 = enteredPassword.getText();
 					ResultSet myRs = myStmt.executeQuery("select * from login Where username = '" + test1 +"' and password = '"+ test2 +"'");
 
 					if(myRs.next()) {
