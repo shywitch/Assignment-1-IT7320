@@ -60,19 +60,19 @@ public class HomePage extends JFrame {
 		contentPane.add(label);
 		
 		JLabel lblCourse1 = new JLabel("New label");
-		lblCourse1.setBounds(45, 120, 165, 23);
+		lblCourse1.setBounds(22, 120, 257, 23);
 		contentPane.add(lblCourse1);
 		
 		JLabel lblCourse2 = new JLabel("New label");
-		lblCourse2.setBounds(45, 154, 165, 23);
+		lblCourse2.setBounds(22, 154, 257, 23);
 		contentPane.add(lblCourse2);
 		
 		JLabel lblCourse3 = new JLabel("New label");
-		lblCourse3.setBounds(45, 188, 165, 23);
+		lblCourse3.setBounds(22, 188, 257, 23);
 		contentPane.add(lblCourse3);
 		
 		JLabel lblCourse4 = new JLabel("New label");
-		lblCourse4.setBounds(45, 222, 165, 23);
+		lblCourse4.setBounds(22, 222, 257, 23);
 		contentPane.add(lblCourse4);
 		
 		JButton btnViewCourse = new JButton("View Course");
