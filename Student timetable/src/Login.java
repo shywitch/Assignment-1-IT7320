@@ -20,7 +20,7 @@ public class Login {
 	JFrame frmLogin;
 	private JTextField enteredUsername;
 	private JPasswordField enteredPassword;
-	private String test1;
+	private String username;
 	
 	
 	public static void main(String[] args) {
@@ -86,9 +86,9 @@ public class Login {
 					String password = "";
 					Connection myConn = DriverManager.getConnection(dbUrl, user,password);
 					Statement myStmt = myConn.createStatement();
-					test1 = enteredUsername.getText();
-					String test2 = enteredPassword.getText();
-					ResultSet myRs = myStmt.executeQuery("select * from login Where username = '" + test1 +"' and password = '"+ test2 +"'");
+					username = enteredUsername.getText();
+					String givenPassword = enteredPassword.getText();
+					ResultSet myRs = myStmt.executeQuery("select * from login Where username = '" + username +"' and password = '"+ givenPassword +"'");
 
 					if(myRs.next()) {
 						

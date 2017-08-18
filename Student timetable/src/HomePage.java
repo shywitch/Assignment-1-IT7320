@@ -16,7 +16,6 @@ import java.awt.event.ActionEvent;
 
 public class HomePage extends JFrame {
 	
-	//private final Login fromlogin;
 	private JPanel contentPane;
 
 
@@ -77,7 +76,7 @@ public class HomePage extends JFrame {
 		contentPane.add(lblCourse4);
 		
 		JButton btnViewCourse = new JButton("View Course");
-		/*btnViewCourse.addActionListener(new ActionListener() {
+		btnViewCourse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try 
 				{
@@ -86,41 +85,94 @@ public class HomePage extends JFrame {
 					String password = "";
 					Connection myConn = DriverManager.getConnection(dbUrl, user,password);
 					Statement myStmt = myConn.createStatement();
-					test1 = textField.getText();
-					String test2 = textField_1.getText();
-					ResultSet myRs = myStmt.executeQuery("select * from login Where username = '" + test1 +"' and password = '"+ test2 +"'");
+					ResultSet myRs = myStmt.executeQuery("select Course_Name, Tutor from course where Course_ID = '1'");
 
-					if(myRs.next()) {
-						
-						lblCourse1.setText("");//display the course info from the db
-						
-					}
+					while(myRs.next()) {
+					lblCourse1.setText(myRs.getString("Course_Name") + " "+ myRs.getString("Tutor"));
 					
-					else
-					{
-						
-						lblInvalidLogin.setText("Invalid Login");
-						
 					}
 				
 
 				} catch (Exception e) {
 					e.printStackTrace();
 				
-				}}});*/
+				}}});
 		
 		btnViewCourse.setBounds(279, 120, 117, 23);
 		contentPane.add(btnViewCourse);
 		
 		JButton btnViewCourse1 = new JButton("View Course");
+		btnViewCourse1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try 
+				{
+					String dbUrl = "jdbc:mysql://localhost:3306/student_login";
+					String user = "root";
+					String password = "";
+					Connection myConn = DriverManager.getConnection(dbUrl, user,password);
+					Statement myStmt = myConn.createStatement();
+					ResultSet myRs = myStmt.executeQuery("select Course_Name, Tutor from course where Course_ID = '2'");
+
+					while(myRs.next()) {
+					lblCourse2.setText(myRs.getString("Course_Name") + " "+ myRs.getString("Tutor"));
+					
+					}
+				
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				
+				}}});
 		btnViewCourse1.setBounds(279, 154, 117, 23);
 		contentPane.add(btnViewCourse1);
 		
 		JButton btnViewCourse2 = new JButton("View Course");
+		btnViewCourse2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try 
+				{
+					String dbUrl = "jdbc:mysql://localhost:3306/student_login";
+					String user = "root";
+					String password = "";
+					Connection myConn = DriverManager.getConnection(dbUrl, user,password);
+					Statement myStmt = myConn.createStatement();
+					ResultSet myRs = myStmt.executeQuery("select Course_Name, Tutor from course where Course_ID = '3'");
+
+					while(myRs.next()) {
+					lblCourse3.setText(myRs.getString("Course_Name") + " "+ myRs.getString("Tutor"));
+					
+					}
+				
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				
+				}}});
 		btnViewCourse2.setBounds(279, 188, 117, 23);
 		contentPane.add(btnViewCourse2);
 		
 		JButton btnViewCourse3 = new JButton("View Course");
+		btnViewCourse3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try 
+				{
+					String dbUrl = "jdbc:mysql://localhost:3306/student_login";
+					String user = "root";
+					String password = "";
+					Connection myConn = DriverManager.getConnection(dbUrl, user,password);
+					Statement myStmt = myConn.createStatement();
+					ResultSet myRs = myStmt.executeQuery("select Course_Name, Tutor from course where Course_ID = '5'");
+
+					while(myRs.next()) {
+					lblCourse4.setText(myRs.getString("Course_Name") + " "+ myRs.getString("Tutor"));
+					
+					}
+				
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				
+				}}});
 		btnViewCourse3.setBounds(279, 222, 117, 23);
 		contentPane.add(btnViewCourse3);
 		
